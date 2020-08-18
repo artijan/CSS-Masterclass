@@ -1,0 +1,95 @@
+.grid {
+  color: white;
+  display: grid;
+  gap: 5px;
+
+  grid-template-columns: repeat(auto-fit, minmax(20px, max-content));
+  grid-auto-rows: 100px;
+  margin-bottom: 30px;
+
+  /* grid-template-columns: [first-line] 100px [second-line] 100px [third-line] 100px [fourth-line] 100px; */
+  /* grid-template-rows: repeat(4, 100px [sexy-line]); */
+
+  /* grid-template-columns: repeat(5, minmax(100px, 1fr));
+  grid-template-rows: repeat(4, 100px); */
+
+  /* grid-auto-flow: column;
+  grid-auto-columns: 100px; */
+
+  /* justify-content: start;
+  align-content: space-evenly; */
+  /* place-content: end center; */
+
+  /* align-items: end;
+  justify-items: end; */
+  /* place-items: stretch center; */
+
+  /* grid-template:
+    [header-start] "header header header header" 1fr [header-end]
+    [content-start] "content content content nav" 2fr [content-end]
+    [footer-start] "footer footer footer footer" 1fr [footer-end] / 1fr 1fr 1fr 1fr; */
+
+  /* grid-template-areas:
+    "header header header header"
+    "content content content nav"
+    "content content content nav"
+    "footer footer footer footer"; */
+}
+
+.item:nth-child(odd) {
+  background-color: #2ecc71;
+}
+
+.item:nth-child(even) {
+  background-color: #3498db;
+}
+
+.header {
+  background-color: #2ecc71;
+
+  /* align-self: end;
+  justify-self: center; */
+  /* place-self: start end; */
+
+  /* grid-column: span 4; */
+  /* grid-column-start: 1;
+  grid-column-end: 5; */
+
+  /* grid-area: header; */
+}
+
+.content {
+  background-color: #3498db;
+  /* grid-column: first-line / -2;
+  grid-row: sexy-line 1 / span 2; */
+  /* grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 4; */
+  /* grid-area: content; */
+}
+
+.nav {
+  background-color: #8e44ad;
+  /* grid-row: span 2; */
+  /* grid-area: nav; */
+  /* grid-row-start: 2;
+  grid-row-end: 4; */
+}
+
+.footer {
+  background-color: #f39c12;
+  /* grid-column: span 4; */
+  /* grid-column-start: 1;
+  grid-column-end: 5; */
+  /* grid-area: footer; */
+}
+
+/* 
+.grid:first-child {
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+}
+
+.grid:nth-child(2) {
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+} */
