@@ -32,24 +32,30 @@ header {
       display: flex;
       align-items: center;
       padding: 0px 15px;
+
       &:hover {
         background-color: gainsboro;
       }
-      li {
-        cursor: pointer;
-        margin-right: 50px;
-      }
       &:first-child {
+        li:not(:first-child) {
+          color: gainsboro;
+        }
         &:hover {
           li:not(:first-child) {
             color: white;
           }
         }
-        li {
-          &:first-child {
-            margin-right: 120px;
-          }
-        }
+      }
+
+      li {
+        cursor: pointer;
+        margin-right: 50px;
+      }
+    }
+
+    li {
+      &:first-child {
+        margin-right: 120px;
       }
     }
   }
