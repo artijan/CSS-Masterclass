@@ -1,14 +1,27 @@
-@import "_mixins.scss";
+@import "_variables.scss";
+@import "_reset.scss";
 
-h1 {
-  color: red;
-  @include responsive("iphone") {
-    color: yellow;
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+
+  height: 100vh;
+  background-color: $bg;
+  display: grid;
+  grid-template-columns: 1.5fr 1.9fr 1.5fr;
+  grid-template-rows: repeat(7, 1fr);
+  gap: 1px;
+  & > * {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
-  @include responsive("iphon-l") {
-    font-size: 60px;
-  }
-  @include responsive("tablet") {
-    color: green;
+  .menu {
+    grid-column-start: -2;
   }
 }
