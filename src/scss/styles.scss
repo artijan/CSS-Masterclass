@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Yrsa:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Yrsa:wght@300;400;600&display=swap");
 @import "_reset.scss";
 @import "_elements.scss";
 @import "_variables.scss";
@@ -79,12 +79,75 @@ header {
   }
   span {
     font-size: 13px;
+  }
+}
 
-    a {
-      text-decoration: none;
-      font-weight: 600;
-      margin: 0 3px;
-      color: orangered;
+a {
+  font-weight: 600;
+  margin: 0 3px;
+  color: orangered;
+}
+.banner {
+  background-color: #efcb56;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 3px;
+  h3 {
+    font-family: "Yrsa";
+    font-size: 65px;
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+  p {
+    font-family: "Yrsa";
+    font-weight: 300;
+    font-size: 35px;
+    line-height: 1.1;
+    width: 55%;
+    text-align: center;
+    margin-bottom: 35px;
+  }
+  span {
+    font-size: 12px;
+  }
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 50vh;
+  gap: 3px;
+  .gallery__item {
+    position: relative;
+    transition: all 0.2s linear;
+    cursor: pointer;
+
+    .gallery__background {
+      width: 100%;
+      height: 100%;
+      background-image: url("https://source.unsplash.com/random");
+      background-size: cover;
+      background-position: center center;
+    }
+    .gallery__text {
+      z-index: 2;
+      text-align: center;
+    }
+
+    &:first-child,
+    &:nth-child(5),
+    &:nth-child(7),
+    &:nth-child(10) {
+      grid-column-start: span 2;
+    }
+    &:hover {
+      .gallery__background {
+        filter: blur(10px);
+        -webkit-filter: blur(10px);
+      }
     }
   }
 }
