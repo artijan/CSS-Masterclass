@@ -72,7 +72,7 @@ main {
   padding: 0px $marginLeft;
   h1 {
     font-size: 110px;
-    width: 40%;
+    width: 50%;
     line-height: 1.3;
     margin-bottom: 90px;
   }
@@ -97,16 +97,19 @@ main {
         overflow: hidden;
         img {
           max-width: 100%;
+          height: 100%;
+          object-fit: cover;
         }
       }
     }
   }
   .events {
-    padding: 0px $marginLeft;
     margin-top: 150px;
     display: grid;
     justify-items: center;
+
     .event__header {
+      padding-bottom: 50px;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       place-items: center center;
@@ -121,21 +124,89 @@ main {
         font-size: 50px;
       }
     }
+
     .event__dates {
+      position: relative;
+      padding: 75px 0 120px;
+      margin-bottom: 100px;
+      background-image: linear-gradient(90deg, #000 50%, transparent 0),
+        linear-gradient(90deg, #000 50%, transparent 0),
+        linear-gradient(90deg, #000 50%, transparent 0),
+        linear-gradient(90deg, #000 50%, transparent 0);
+      background-position: 0 0, 0 93%, left 14px, 0 calc(93% - 14px);
+      background-repeat: repeat-x, repeat-x, repeat-x, repeat-x;
+      background-size: 24px 1px, 24px 1px, 24px 1px, 24px 1px;
+
       font-family: "Josefin Sans";
-      padding: 150px 0px;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       place-items: center center;
       text-align: center;
       width: 100%;
+
       .date {
         display: flex;
         flex-direction: column;
+
         span:first-child {
-          margin-bottom: 25px;
+          margin-bottom: 20px;
         }
       }
+      button {
+        cursor: pointer;
+        font-family: "Josefin Sans";
+        font-size: 18px;
+
+        position: absolute;
+        align-items: center;
+        border: 1px solid black;
+        text-decoration: none;
+        background-color: white;
+        bottom: 0;
+        padding: 19px 65px;
+        transition: color, background-color 0.2s ease-in-out;
+        &:hover {
+          background-color: black;
+          color: white;
+        }
+      }
+    }
+  }
+  .map {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 60px;
+    margin-bottom: 100px;
+    text-align: center;
+
+    .event__text {
+      display: grid;
+      place-items: center center;
+      padding: 80px;
+      color: inherit;
+      text-decoration: none;
+      font-size: 60px;
+      line-height: 1.3;
+      background-image: linear-gradient(90deg, #000 50%, transparent 0),
+        linear-gradient(90deg, #000 50%, transparent 0),
+        linear-gradient(180deg, #000 50%, transparent 0),
+        linear-gradient(180deg, #000 50%, transparent 0);
+      background-position: 0 0, 0 100%, 0 0, 100% 0;
+      background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+      background-size: 30px 1px, 30px 1px, 1px 30px, 1px 30px;
+    }
+
+    .event__map {
+      border: 1px dashed black;
+      overflow: hidden;
+      a{
+        img {
+          max-width:: 100%;
+          object-fit: cover;
+        
+        }
+      }
+      
     }
   }
 }
